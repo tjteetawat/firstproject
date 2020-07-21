@@ -67,27 +67,16 @@
         </style>
     </head>
     <body>
-        <h1>
-            Todo App
-        </h1>
-        <h2>
-            fknrknfndfn
-        </h2>
-        <h3>
-            hi
-        </h3>
-        <h4>
-            fjireoi
-        </h4>
-        <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa repellat incidunt inventore velit error omnis deserunt recusandae, dolor nobis? Natus praesentium laudantium, velit est porro eos eius doloribus repellendus magnam!
+        <div class="container">
+            <div class="row border">
+                <div class="col-8 border border-danger">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure velit minima, odio repellat nam architecto excepturi ducimus facilis nisi vel rerum minus dicta reprehenderit quaerat quam inventore, aperiam ratione quod?
+                </div>
+                <div class="col-4 border border-primary">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro quam eligendi aperiam sequi laboriosam, ex amet non culpa quos nobis, illo sit aliquam. Fugit minus eligendi ea optio. Eligendi, sapiente?
+                </div>
 
-        </p>
+            </div>
+        </div>
 
-        <a href="http://www.youtube.com" target="_blank">Click here for youtube</a>
-
-        <img src="https://cdn.mos.cms.futurecdn.net/SytNGv3ZxAVCkvcspmbbvh-650-80.jpg" alt="">
     </body>
-<script src="{{ asset('js/app.js') }}" type="text/javascript"></script>
-</html
-
