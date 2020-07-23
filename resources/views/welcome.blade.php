@@ -67,16 +67,23 @@
         </style>
     </head>
     <body>
-        <div class="container">
-            <div class="row border">
-                <div class="col-8 border border-danger">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure velit minima, odio repellat nam architecto excepturi ducimus facilis nisi vel rerum minus dicta reprehenderit quaerat quam inventore, aperiam ratione quod?
-                </div>
-                <div class="col-4 border border-primary">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro quam eligendi aperiam sequi laboriosam, ex amet non culpa quos nobis, illo sit aliquam. Fugit minus eligendi ea optio. Eligendi, sapiente?
-                </div>
+        <div class="container border border-danger">
+            <div class="row border border-danger">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                          <th >ID</th>
+                          <th >Submit Date</th>
+                          <th >Subject</th>
+                          <th >Title</th>
+                          <th>Status </th>
+                        </tr>
+                      </thead>
+
+                </table>
 
             </div>
+
         </div>
 
     </body>
