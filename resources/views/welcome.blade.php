@@ -69,21 +69,19 @@
     <body>
         <div class="container border border-danger">
             <div class="row border border-danger">
-                <table class="table">
-                    <thead class="thead-dark">
-                        <tr>
-                          <th >ID</th>
-                          <th >Submit Date</th>
-                          <th >Subject</th>
-                          <th >Title</th>
-                          <th>Status </th>
-                        </tr>
-                      </thead>
-
-                </table>
-
+                <div class="col-md-12">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                              <th>ID</th>
+                              <th>Submit Date</th>
+                              <th>Subject</th>
+                              <th>Title</th>
+                              <th>Status </th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
             </div>
-
         </div>
-
     </body>
