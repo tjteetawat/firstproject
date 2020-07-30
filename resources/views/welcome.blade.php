@@ -157,7 +157,7 @@
                                    Details
                                 </div>
                                 <div class="col-md-10">
-                                    <textarea class="form-control" id="" cols="30" rows="10"></textarea>
+                                    <textarea class="form-control" id="" cols="30" rows="4"></textarea>
                                 </div>
                             </div>
                         </div>
