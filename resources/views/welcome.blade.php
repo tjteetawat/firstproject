@@ -67,10 +67,10 @@
         </style>
     </head>
     <body>
-        <div class="container border border-danger">
-            <div class="row border border-danger">
+        <div class="container">
+            <div class="row">
                 <div class="col-md-12">
-                    <table class="table">
+                    <table class="table table-bordered">
                         <thead class="thead-dark">
                             <tr>
                               <th>ID</th>
@@ -80,8 +80,58 @@
                               <th>Status </th>
                             </tr>
                         </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>27/7/2020</td>
+                                <td>phisics</td>
+                                <td>คำนวณแรงโน้มถ่วงของโลก</td>
+                                <td>ส่งแล้ว</td>
+                            <tr>
+                                <td>2</td>
+                                <td>29/7/2020</td>
+                                <td>math</td>
+                                <td>การบวกเลข</td>
+                                <td>ยังไม่ส่ง</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>1/8/2020</td>
+                                <td>สังคม</td>
+                                <td>สวดมนต์</td>
+                                <td>ส่งแล้ว</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>2/8/2020</td>
+                                <td>คอม</td>
+                                <td>coding</td>
+                                <td>ส่งแล้ว</td>
+                            </tr>
+                        </tbody>
                     </table>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-md-5">
+                    <div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-2">
+                                   Title
+                                </div>
+                                <div class="col-md-10">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="col-md-4">
+
+                    </div>
+                </div>
+            </div>
         </div>
-    </body>
+     </body>
