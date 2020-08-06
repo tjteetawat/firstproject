@@ -122,7 +122,9 @@
                                    Title
                                 </div>
                                 <div class="col-md-10">
+
                                     <input type="text" class="form-control">
+
                                 </div>
                             </div>
                         </div>
