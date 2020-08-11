@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/abc', function () {
-    return view('welcome');
-});
+//
+Route::get('/homework','HomeworkController@index');
+Route::post('/homework','HomeworkController@store');
