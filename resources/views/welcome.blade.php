@@ -73,11 +73,11 @@
                     <table class="table table-bordered">
                         <thead class="thead-dark">
                             <tr>
-                              <th>ID</th>
+                              <th class="text-center">ID</th>
                               <th>Submit Date</th>
                               <th>Subject</th>
                               <th>Title</th>
-                              <th>Status </th>
+                              <th class="text-center">Status </th>
                             </tr>
                         </thead>
                         <tbody>
