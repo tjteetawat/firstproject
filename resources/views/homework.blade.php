@@ -113,7 +113,7 @@
                     </table>
                 </div>
             </div>
-            <form method="POST" action="/profile">
+            <form method="POST" action="/homework">
                 @csrf
                 <div class="row">
                     <div class="col-md-5">
@@ -124,7 +124,7 @@
                                     Title
                                     </div>
                                     <div class="col-md-10">
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" name="title" required placeholder="หัวข้องาน">
                                     </div>
                                 </div>
                             </div>
@@ -137,7 +137,8 @@
                                 Subject
                             </div>
                             <div class="col-md-8">
-                                <select name="" id="" class="form-control">
+                                <select name="subject" id="" class="form-control" required >
+                                    <option value="">*เลือกวิชา</option>
                                     <option value="math">Math</option>
                                     <option value="science">Science</option>
                                     <option value="thai">Thai</option>
@@ -159,7 +160,7 @@
                                     Details
                                     </div>
                                     <div class="col-md-10">
-                                        <textarea class="form-control" id="" cols="30" rows="4"></textarea>
+                                        <textarea name="details" class="form-control" id="" cols="30" rows="4" placeholder="หมายเหตุ"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -175,7 +176,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <input type="date" class="form-control">
+                                        <input type="date" class="form-control" name="order_date" required>
                                     </div>
                                 </div>
                             </div>
@@ -191,7 +192,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <input type="date" class="form-control">
+                                        <input type="date" class="form-control" name="submit_date" >
                                     </div>
 
                                 </div>
