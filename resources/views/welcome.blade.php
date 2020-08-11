@@ -113,101 +113,104 @@
                     </table>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-5">
-                    <div>
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-md-2">
-                                   Title
-                                </div>
-                                <div class="col-md-10">
-                                    <input type="text" class="form-control">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-7">
-                    <div class="row">
-                        <div class="col-md-2">
-                            Subject
-                        </div>
-                        <div class="col-md-8">
-                            <select name="" id="" class="form-control">
-                                <option value="math">Math</option>
-                                <option value="science">Science</option>
-                                <option value="thai">Thai</option>
-
-                            </select>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-            <div class="row">
-                <div class="col-md-5">
-                    <div>
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-md-2">
-                                   Details
-                                </div>
-                                <div class="col-md-10">
-                                    <textarea class="form-control" id="" cols="30" rows="4"></textarea>
+            <form method="POST" action="/profile">
+                @csrf
+                <div class="row">
+                    <div class="col-md-5">
+                        <div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                    Title
+                                    </div>
+                                    <div class="col-md-10">
+                                        <input type="text" class="form-control">
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-7">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="row">
-                                <div class="col-md-12 text-center">
-                                  สั่ง
-                                </div>
+
+                    <div class="col-md-7">
+                        <div class="row">
+                            <div class="col-md-2">
+                                Subject
                             </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <input type="date" class="form-control">
-                                </div>
+                            <div class="col-md-8">
+                                <select name="" id="" class="form-control">
+                                    <option value="math">Math</option>
+                                    <option value="science">Science</option>
+                                    <option value="thai">Thai</option>
+
+                                </select>
                             </div>
-                        </div>
-                        <div class="col-md-2">
 
                         </div>
-                        <div class="col-md-4">
-                            <div class="row">
-                                <div class="col-md-12 text-center">
-                                  ส่ง
-                                </div>
 
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <input type="date" class="form-control">
-                                </div>
-
-                            </div>
-                        </div>
                     </div>
 
                 </div>
+                <div class="row">
+                    <div class="col-md-5">
+                        <div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                    Details
+                                    </div>
+                                    <div class="col-md-10">
+                                        <textarea class="form-control" id="" cols="30" rows="4"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-7">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="row">
+                                    <div class="col-md-12 text-center">
+                                    สั่ง
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <input type="date" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+
+                            </div>
+                            <div class="col-md-4">
+                                <div class="row">
+                                    <div class="col-md-12 text-center">
+                                    ส่ง
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <input type="date" class="form-control">
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
 
 
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <button class="btn btn-info">History</button>
                 </div>
-                <div class="col-md-4"></div>
-                <div class="col-md-4">
-                    <button class="btn btn-success">Confirm</button>
+                <div class="row">
+                    <div class="col-md-4">
+                        <button class="btn btn-info">History</button>
+                    </div>
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                        <button type="submit" class="btn btn-success">Confirm</button>
+                    </div>
                 </div>
-            </div>
+            </form>
         </div>
      </body>
