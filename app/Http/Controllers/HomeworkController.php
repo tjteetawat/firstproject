@@ -48,7 +48,8 @@ class HomeworkController extends Controller
      */
     public function show($id)
     {
-        //
+        $id = $id->all();
+        dd($id);
     }
 
     /**
