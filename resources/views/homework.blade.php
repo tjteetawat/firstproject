@@ -81,34 +81,16 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach ($homeworks as $homework)
                             <tr>
-                                <td>1</td>
-                                <td>27/7/2020</td>
-                                <td>phisics</td>
-                                <td>คำนวณแรงโน้มถ่วงของโลก</td>
-                                <td>ส่งแล้ว</td>
-                            <tr>
-                                <td>2</td>
-                                <td>29/7/2020</td>
-                                <td>math</td>
-                                <td>การบวกเลข</td>
-                                <td>ยังไม่ส่ง</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>1/8/2020</td>
-                                <td>สังคม</td>
-                                <td>สวดมนต์</td>
-                                <td>ส่งแล้ว</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>2/8/2020</td>
-                                <td>คอม</td>
-                                <td>coding</td>
-                                <td>ส่งแล้ว</td>
+                                <td class="text-center">{{ $homework->id }}</td>
+                                <td class="text-center">{{ $homework->submit_date }}</td>
+                                <td class="text-center">{{ $homework->subject }}</td>
+                                <td>{{ $homework->title }}</td>
+                                <td class="text-center">{{ $homework->status }}</td>
                             </tr>
 
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
