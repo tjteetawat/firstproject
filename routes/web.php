@@ -14,3 +14,4 @@
 //
 Route::get('/homework','HomeworkController@index');
 Route::post('/homework','HomeworkController@store');
+Route::get('/history','HomeworkController@history')->name('history');
