@@ -14,8 +14,8 @@ class HomeworkController extends Controller
      */
     public function index()
     {
-        //
-        return view('homework');
+        $homeworks = Homework::all();
+        return view('homework')->with('homeworks',$homeworks);
     }
 
     /**
@@ -37,6 +37,7 @@ class HomeworkController extends Controller
     public function store(Request $request)
     {
         $req = $request->all();
+
         $homework = new Homework;
         $homework->subject =$req['subject'];
         $homework->title =$req['title'];
@@ -46,7 +47,8 @@ class HomeworkController extends Controller
         $homework->submit_date=$req['submit_date'];
         $homework->save();
 
-        return view('homework ');
+        $homeworks = Homework::all();
+        return view('homework')->with('homeworks',$homeworks);
 
     }
 
