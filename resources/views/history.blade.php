@@ -68,4 +68,35 @@
     </head>
     <body>
 
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <table class="table table-bordered">
+                        <thead class="thead-dark">
+                            <tr>
+                              <th class="text-center">ID</th>
+                              <th>Submit Date</th>
+                              <th>Subject</th>
+                              <th>Title</th>
+                              <th class="text-center">Status </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($homeworks as $homework)
+                            <tr>
+                                <td class="text-center">{{ $homework->id }}</td>
+                                <td class="text-center">{{ $homework->submit_date }}</td>
+                                <td class="text-center">{{ $homework->subject }}</td>
+                                <td>{{ $homework->title }}</td>
+                                <td class="text-center">{{ $homework->status }}</td>
+                            </tr>
+
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
      </body>

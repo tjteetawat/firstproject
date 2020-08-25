@@ -87,7 +87,12 @@
                                 <td class="text-center">{{ $homework->submit_date }}</td>
                                 <td class="text-center">{{ $homework->subject }}</td>
                                 <td>{{ $homework->title }}</td>
-                                <td class="text-center">{{ $homework->status }}</td>
+                                <td class="text-center">
+
+                                    <a href="#" class="btn btn-secondary btn-sm">{{ $homework->status }}</a>
+                                    <a href="#" class="btn btn-outline-warning btn-sm">กำลังทำ</a>
+                                    <a href="#" class="btn btn-outline-success btn-sm">ส่งแล้ว</a>
+                                </td>
                             </tr>
 
                             @endforeach
