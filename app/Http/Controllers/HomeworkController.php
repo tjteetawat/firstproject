@@ -37,6 +37,12 @@ class HomeworkController extends Controller
     public function store(Request $request)
     {
         $req = $request->all();
+        if($req['order_date']  > $req['submit_date']){
+
+            $homeworks = Homework::all();
+            return view('homework')->with('homeworks',$homeworks);
+
+        }
 
         $homework = new Homework;
         $homework->subject =$req['subject'];
@@ -99,6 +105,8 @@ class HomeworkController extends Controller
 
     public function history(){
 
-        return view('history');
+        $homeworks = Homework::all();
+
+        return view('history')->with('homeworks',$homeworks);
     }
 }
