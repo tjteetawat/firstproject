@@ -81,21 +81,34 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($homeworks as $homework)
-                            <tr>
-                                <td class="text-center">{{ $homework->id }}</td>
-                                <td class="text-center">{{ $homework->submit_date }}</td>
-                                <td class="text-center">{{ $homework->subject }}</td>
-                                <td>{{ $homework->title }}</td>
-                                <td class="text-center">
+                                @foreach ($homeworks as $homework)
+                                <tr>
+                                    <td class="text-center">{{ $homework->id }}</td>
+                                    <td class="text-center">{{ $homework->submit_date }}</td>
+                                    <td class="text-center">{{ $homework->subject }}</td>
+                                    <td>{{ $homework->title }}</td>
+                                    <td class="text-center">
+                                        @if ($homework->status == "ยังไม่ส่ง")
+                                            <a href="{{ url('/homework/'.$homework->id.'/'."no") }}" class="btn btn-secondary btn-sm">ยังไม่ส่ง</a>
+                                            <a href="{{ url('/homework/'.$homework->id.'/'."doing") }}" class="btn btn-outline-warning btn-sm">กำลังทำ</a>
+                                            <a href="{{ url('/homework/'.$homework->id.'/'."done") }}" class="btn btn-outline-success btn-sm">ส่งแล้ว</a>
+                                        @endif
+                                        @if ($homework->status == "กำลังทำ")
+                                            <a href="{{ url('/homework/'.$homework->id.'/'."no") }}" class="btn btn-outline-secondary btn-sm">ยังไม่ส่ง</a>
+                                            <a href="{{ url('/homework/'.$homework->id.'/'."doing") }}" class="btn btn-warning btn-sm">กำลังทำ</a>
+                                            <a href="{{ url('/homework/'.$homework->id.'/'."done") }}" class="btn btn-outline-success btn-sm">ส่งแล้ว</a>
+                                        @endif
+                                        @if ($homework->status == "ส่งแล้ว")
+                                            <a href="{{ url('/homework/'.$homework->id.'/'."no") }}" class="btn btn-outline-secondary btn-sm">ยังไม่ส่ง</a>
+                                            <a href="{{ url('/homework/'.$homework->id.'/'."doing") }}" class="btn btn-outline-warning btn-sm">กำลังทำ</a>
+                                            <a href="{{ url('/homework/'.$homework->id.'/'."done") }}" class="btn btn-success btn-sm">ส่งแล้ว</a>
+                                        @endif
 
-                                    <a href="#" class="btn btn-secondary btn-sm">{{ $homework->status }}</a>
-                                    <a href="#" class="btn btn-outline-warning btn-sm">กำลังทำ</a>
-                                    <a href="#" class="btn btn-outline-success btn-sm">ส่งแล้ว</a>
-                                </td>
-                            </tr>
 
-                            @endforeach
+                                    </td>
+                                </tr>
+                                @endforeach
+
                         </tbody>
                     </table>
                 </div>

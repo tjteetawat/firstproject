@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/homework','HomeworkController@index');
+Route::get('/homework','HomeworkController@index')->name('homework');
 Route::post('/homework','HomeworkController@store');
 Route::get('/history','HomeworkController@history')->name('history');
+
+
+Route::get('/homework/{id}/{status}','HomeworkController@update_status');
+

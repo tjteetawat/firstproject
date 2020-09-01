@@ -39,8 +39,7 @@ class HomeworkController extends Controller
         $req = $request->all();
         if($req['order_date']  > $req['submit_date']){
 
-            $homeworks = Homework::all();
-            return view('homework')->with('homeworks',$homeworks);
+            return redirect('homework');
 
         }
 
@@ -53,8 +52,7 @@ class HomeworkController extends Controller
         $homework->submit_date=$req['submit_date'];
         $homework->save();
 
-        $homeworks = Homework::all();
-        return view('homework')->with('homeworks',$homeworks);
+        return redirect('homework');
 
     }
 
@@ -106,7 +104,32 @@ class HomeworkController extends Controller
     public function history(){
 
         $homeworks = Homework::all();
-
         return view('history')->with('homeworks',$homeworks);
     }
+
+    public function update_status($id,$status){
+
+        if ($status == "no") {
+
+            $new_status = "ยังไม่ส่ง";
+
+        }elseif($status == "doing"){
+
+            $new_status = "กำลังทำ";
+
+        }elseif($status == "done"){
+
+            $new_status = "ส่งแล้ว";
+        }
+
+        Homework::find($id)->update([
+            "status"    =>  $new_status
+        ]);
+
+        $homeworks = Homework::all();
+        return redirect('/homework');
+
+    }
+
+
 }
