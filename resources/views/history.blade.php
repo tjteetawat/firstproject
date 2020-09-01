@@ -88,12 +88,25 @@
                                 <td class="text-center">{{ $homework->submit_date }}</td>
                                 <td class="text-center">{{ $homework->subject }}</td>
                                 <td>{{ $homework->title }}</td>
-                                <td class="text-center">{{ $homework->status }}</td>
+                                <td>
+                                    <div class="row">
+                                        <div class="col-md-6 text-center">
+                                            <span class="btn btn-info btn-sm">ส่งแล้ว</span>
+                                            <a href="{{ url('/homework/'.$homework->id.'/'."no") }}" class="btn btn-success btn-sm">แก้ไข</a>
+                                        </div>
+                                        <div class="col-md-6 text-right">
+                                            <a href="" class="btn btn-danger btn-sm ">Clear</a>
+                                        </div>
+
+                                    </div>
+
+                                </td>
                             </tr>
 
                             @endforeach
                         </tbody>
                     </table>
+                    <a href="{{ route('homework') }}">shdfjkhkdhkjdsfhj</a>
                 </div>
             </div>
 

@@ -14,7 +14,11 @@ class HomeworkController extends Controller
      */
     public function index()
     {
-        $homeworks = Homework::all();
+        $homeworks = Homework::where('status',"ยังไม่ส่ง")
+        ->orWhere('status', 'กำลังทำ')
+        ->take(20)
+        ->get();
+
         return view('homework')->with('homeworks',$homeworks);
     }
 
@@ -103,7 +107,7 @@ class HomeworkController extends Controller
 
     public function history(){
 
-        $homeworks = Homework::all();
+        $homeworks = Homework::where('status',"ส่งแล้ว")->get();
         return view('history')->with('homeworks',$homeworks);
     }
 

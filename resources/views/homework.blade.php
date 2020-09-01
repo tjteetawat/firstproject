@@ -89,17 +89,17 @@
                                     <td>{{ $homework->title }}</td>
                                     <td class="text-center">
                                         @if ($homework->status == "ยังไม่ส่ง")
-                                            <a href="{{ url('/homework/'.$homework->id.'/'."no") }}" class="btn btn-secondary btn-sm">ยังไม่ส่ง</a>
+                                            <a href="{{ url('/homework/'.$homework->id.'/'."no") }}" class="btn btn-danger btn-sm">ยังไม่ส่ง</a>
                                             <a href="{{ url('/homework/'.$homework->id.'/'."doing") }}" class="btn btn-outline-warning btn-sm">กำลังทำ</a>
                                             <a href="{{ url('/homework/'.$homework->id.'/'."done") }}" class="btn btn-outline-success btn-sm">ส่งแล้ว</a>
                                         @endif
                                         @if ($homework->status == "กำลังทำ")
-                                            <a href="{{ url('/homework/'.$homework->id.'/'."no") }}" class="btn btn-outline-secondary btn-sm">ยังไม่ส่ง</a>
+                                            <a href="{{ url('/homework/'.$homework->id.'/'."no") }}" class="btn btn-outline-danger btn-sm">ยังไม่ส่ง</a>
                                             <a href="{{ url('/homework/'.$homework->id.'/'."doing") }}" class="btn btn-warning btn-sm">กำลังทำ</a>
                                             <a href="{{ url('/homework/'.$homework->id.'/'."done") }}" class="btn btn-outline-success btn-sm">ส่งแล้ว</a>
                                         @endif
                                         @if ($homework->status == "ส่งแล้ว")
-                                            <a href="{{ url('/homework/'.$homework->id.'/'."no") }}" class="btn btn-outline-secondary btn-sm">ยังไม่ส่ง</a>
+                                            <a href="{{ url('/homework/'.$homework->id.'/'."no") }}" class="btn btn-outline-danger btn-sm">ยังไม่ส่ง</a>
                                             <a href="{{ url('/homework/'.$homework->id.'/'."doing") }}" class="btn btn-outline-warning btn-sm">กำลังทำ</a>
                                             <a href="{{ url('/homework/'.$homework->id.'/'."done") }}" class="btn btn-success btn-sm">ส่งแล้ว</a>
                                         @endif
@@ -142,6 +142,11 @@
                                     <option value="math">Math</option>
                                     <option value="science">Science</option>
                                     <option value="thai">Thai</option>
+                                    <option value="english">English</option>
+                                    <option value="social">Social</option>
+                                    <option value="กอท.">การงานอาชีพและเทคโนโลยี</option>
+                                    <option value="ศิลปะ">ศิลปะ ดนตรี</option>
+
 
                                 </select>
                             </div>
