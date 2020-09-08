@@ -140,8 +140,13 @@ class HomeworkController extends Controller
     // this function is for clear
     public function clear($id){
 
-        $id = Homework::find($id);
-        $id->delete();
+        $homework = Homework::find($id);
+        if(!$homework){
+            return redirect('/history');
+        }else{
+            $homework->delete();
+        }
+
         return redirect('/history');
 
 
