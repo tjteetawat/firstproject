@@ -133,6 +133,8 @@ class HomeworkController extends Controller
         $homeworks = Homework::all();
         return redirect('/homework');
 
+
+
     }
 
 

@@ -106,7 +106,7 @@
                             @endforeach
                         </tbody>
                     </table>
-                    <a href="{{ route('homework') }}">shdfjkhkdhkjdsfhj</a>
+                    <a href="{{ route('homework') }}" class="btn btn-secondary btn-sm">ย้อนกลับ</a>
                 </div>
             </div>
 
