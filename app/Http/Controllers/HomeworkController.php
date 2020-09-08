@@ -140,8 +140,15 @@ class HomeworkController extends Controller
     // this function is for clear
     public function clear($id){
 
-        //Search google Eloquent delete
+        $id = Homework::find($id);
+        $id->delete();
+        return redirect('/history');
+
+
+
     }
+
+
 
 
 }

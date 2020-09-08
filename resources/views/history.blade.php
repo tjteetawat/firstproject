@@ -96,7 +96,7 @@
                                         </div>
                                         <div class="col-md-6 text-right">
                                              <!-- add link to this href -->
-                                            <a href="" class="btn btn-danger btn-sm ">Clear</a>
+                                            <a href="{{ route('clear_homework',$homework->id) }}" class="btn btn-danger btn-sm ">Clear</a>
                                         </div>
 
                                     </div>
@@ -107,12 +107,7 @@
                             @endforeach
                         </tbody>
                     </table>
-<<<<<<< HEAD
                     <a href="{{ route('homework') }}" class="btn btn-secondary btn-sm">ย้อนกลับ</a>
-=======
-                    <!-- add class to this button -->
-                    <a href="{{ route('homework') }}">Homework</a>
->>>>>>> 37840ff2479af063400c8755d527a34eac25f5b8
                 </div>
             </div>
 
