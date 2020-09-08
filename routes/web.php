@@ -20,3 +20,6 @@ Route::get('/history','HomeworkController@history')->name('history');
 
 Route::get('/homework/{id}/{status}','HomeworkController@update_status');
 
+// Add Rote to delete here
+// Route::get('/homework/{id}/clear','HomeworkController@clear');
+
