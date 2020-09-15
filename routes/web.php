@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
+Route::get('/','PageController@index');
 Route::get('/homework','HomeworkController@index')->name('homework');
 Route::post('/homework','HomeworkController@store');
 Route::get('/history','HomeworkController@history')->name('history');
