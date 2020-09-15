@@ -1514,6 +1514,27 @@
                 "sweet-alert2",
                 "toast"
             ],
+<<<<<<< HEAD
+=======
+            "funding": [
+                {
+                    "url": "https://ko-fi.com/realrashid",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://www.buymeacoffee.com/realrashid",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://issuehunt.io/r/realrashid",
+                    "type": "issuehunt"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/realrashid/sweet-alert",
+                    "type": "tidelift"
+                }
+            ],
+>>>>>>> d3820b99bd3f1af951c230ba068f2ad457803924
             "time": "2020-07-17T18:23:42+00:00"
         },
         {
