@@ -12,10 +12,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-Route::get('/homework','HomeworkController@index')->name('homework');
+Route::get('/','HomeController@index')->name('home');
+Route::get('/homework','HomeworkController@index')->name('homework')->middleware('auth');
 Route::post('/homework','HomeworkController@store');
-Route::get('/history','HomeworkController@history')->name('history');
+Route::get('/history','HomeworkController@history')->name('history')->middleware('auth');
 
 
 Route::get('/homework/{id}/{status}','HomeworkController@update_status');
@@ -25,3 +25,7 @@ Route::get('/clear_homework/{id}','HomeworkController@clear')->name('clear_homew
 
 //Auth
 //Middleware
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
