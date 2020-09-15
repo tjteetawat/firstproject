@@ -67,7 +67,7 @@
         </style>
     </head>
     <body>
-
+        @include('sweetalert::alert')
         <div class="container">
             <div class="row">
                 <div class="col-md-12">

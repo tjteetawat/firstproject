@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Homework;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class HomeworkController extends Controller
 {
@@ -18,6 +19,7 @@ class HomeworkController extends Controller
         ->orWhere('status', 'กำลังทำ')
         ->take(20)
         ->get();
+        Alert::alert('Title', 'Message', 'Type');
 
         return view('homework')->with('homeworks',$homeworks);
     }
