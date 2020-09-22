@@ -23,9 +23,11 @@ Route::get('/homework/{id}/{status}','HomeworkController@update_status');
 // Add Rote to delete here
 Route::get('/clear_homework/{id}','HomeworkController@clear')->name('clear_homework');
 
-//Auth
-//Middleware
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+// Subject controller
+Route::get('/create_subject','SubjectController@create')->name('create_subject')->middleware('auth');
+

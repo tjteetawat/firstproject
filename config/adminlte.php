@@ -265,6 +265,12 @@ return [
             'icon'        => 'far fa-fw fa-file',
 
         ],
+        [
+            'text'        => 'Create Subject',
+            'url'         => '/create_subject',
+            'icon'        => 'far fa-fw fa-file',
+
+        ],
         // ['header' => 'labels'],
         // [
         //     'text'       => 'Information',
