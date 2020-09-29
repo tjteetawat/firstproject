@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Homework;
+use App\Subject;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class HomeworkController extends Controller
@@ -17,11 +18,14 @@ class HomeworkController extends Controller
     {
         $homeworks = Homework::where('status',"ยังไม่ส่ง")
         ->orWhere('status', 'กำลังทำ')
-        ->take(20)
+        ->take(50)
         ->get();
-        Alert::alert('Title', 'Message', 'Type');
 
-        return view('homework')->with('homeworks',$homeworks);
+        $subjects = Subject::all();
+
+        return view('homework')
+        ->with('homeworks',$homeworks)
+        ->with('subjects',$subjects);
     }
 
     /**

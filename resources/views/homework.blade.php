@@ -81,13 +81,9 @@
                         <div class="col-md-8">
                             <select name="subject" id="" class="form-control" required >
                                 <option value="">*เลือกวิชา</option>
-                                <option value="math">Math</option>
-                                <option value="science">Science</option>
-                                <option value="thai">Thai</option>
-                                <option value="english">English</option>
-                                <option value="social">Social</option>
-                                <option value="กอท.">การงานอาชีพและเทคโนโลยี</option>
-                                <option value="ศิลปะ">ศิลปะ ดนตรี</option>
+                                @foreach ($subjects as $subject)
+                                    <option value="{{ $subject->name }}">{{ $subject->name }} - {{ $subject->teacher_name }}</option>
+                                @endforeach
                             </select>
                         </div>
 

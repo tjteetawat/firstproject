@@ -17,14 +17,6 @@ class Homework extends Model
 
     ];
 
-    public static $rules=[
 
-        'subject'       =>  'required',
-        'title'         =>  'required',
-        'submit_date'   =>  'required',
-        'order_date'    =>  'required',
-        'status'        =>  'required',
-
-    ];
 
 }
