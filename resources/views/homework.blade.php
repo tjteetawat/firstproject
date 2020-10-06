@@ -55,104 +55,131 @@
                 </table>
             </div>
         </div>
-        <form method="POST" action="/homework">
-            @csrf
-            <div class="row">
-                <div class="col-md-5">
-                    <div>
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-md-2">
-                                Title
-                                </div>
-                                <div class="col-md-10">
-                                    <input type="text" class="form-control" name="title" required placeholder="หัวข้องาน">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-7">
-                    <div class="row">
-                        <div class="col-md-2">
-                            Subject
-                        </div>
-                        <div class="col-md-8">
-                            <select name="subject" id="" class="form-control" required >
-                                <option value="">*เลือกวิชา</option>
-                                @foreach ($subjects as $subject)
-                                    <option value="{{ $subject->name }}">{{ $subject->name }} - {{ $subject->teacher_name }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-            <div class="row">
-                <div class="col-md-5">
-                    <div>
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-md-2">
-                                Details
-                                </div>
-                                <div class="col-md-10">
-                                    <textarea name="details" class="form-control" id="" cols="30" rows="4" placeholder="หมายเหตุ"></textarea>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-7">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="row">
-                                <div class="col-md-12 text-center">
-                                สั่ง
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <input type="date" class="form-control" name="order_date" required>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-2">
-
-                        </div>
-                        <div class="col-md-4">
-                            <div class="row">
-                                <div class="col-md-12 text-center">
-                                ส่ง
-                                </div>
-
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <input type="date" class="form-control" name="submit_date" >
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
+        <div class="row">
+            <div class="col-12 text-right">
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addModal">
+                    Add Homework
+                </button>
 
 
             </div>
-            <div class="row">
-                <div class="col-md-4">
+        </div>
+         <!-- Modal -->
+         <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-primary">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
                 </div>
-                <div class="col-md-4"></div>
-                <div class="col-md-4">
-                    <button type="submit" class="btn btn-success">Confirm</button>
+                <div class="modal-body">
+                    <form method="POST" action="/homework">
+                        @csrf
+                        <div class="row">
+                            <div class="col-md-5">
+                                <div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-2">
+                                            Title
+                                            </div>
+                                            <div class="col-md-10">
+                                                <input type="text" class="form-control" name="title" required placeholder="หัวข้องาน">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-7">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        Subject
+                                    </div>
+                                    <div class="col-md-8">
+                                        <select name="subject" id="" class="form-control" required >
+                                            <option value="">*เลือกวิชา</option>
+                                            @foreach ($subjects as $subject)
+                                                <option value="{{ $subject->name }}">{{ $subject->name }} - {{ $subject->teacher_name }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-5">
+                                <div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-2">
+                                            Details
+                                            </div>
+                                            <div class="col-md-10">
+                                                <textarea name="details" class="form-control" id="" cols="30" rows="4" placeholder="หมายเหตุ"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="row">
+                                            <div class="col-md-12 text-center">
+                                            สั่ง
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <input type="date" class="form-control" name="order_date" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="row">
+                                            <div class="col-md-12 text-center">
+                                            ส่ง
+                                            </div>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <input type="date" class="form-control" name="submit_date" >
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                            </div>
+                            <div class="col-md-4"></div>
+
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">submit</button>
                 </div>
             </div>
-        </form>
+            </div>
+        </div>
+
     </div>
 @stop
 
