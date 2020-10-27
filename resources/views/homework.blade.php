@@ -12,6 +12,13 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
+                @if (session('warning'))
+                    <div class="alert alert-warning">
+                        {{ session('warning') }}
+                        <a href="/history">คลิ๊กที่นี่</a>
+                    </div>
+                @endif
+
                 <table class="table table-bordered">
                     <thead class="thead-dark">
                         <tr>
@@ -25,7 +32,7 @@
                     <tbody>
                             @foreach ($homeworks as $homework)
                             <tr>
-                                <td class="text-center">{{ $homework->id }}</td>
+                                <td class="text-center">{{ $loop->iteration }}</td>
                                 <td class="text-center">{{ $homework->submit_date }}</td>
                                 <td class="text-center">{{ $homework->subject }}</td>
                                 <td>{{ $homework->title }}</td>
@@ -69,15 +76,16 @@
          <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
-                <div class="modal-header bg-primary">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <form method="POST" action="/homework">
+                @csrf
+                <div class="modal-header bg-dark">
+                <h5 class="modal-title" id="exampleModalLabel">Add Homework</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
                 </div>
                 <div class="modal-body">
-                    <form method="POST" action="/homework">
-                        @csrf
+
                         <div class="row">
                             <div class="col-md-5">
                                 <div>
@@ -170,12 +178,12 @@
                             <div class="col-md-4"></div>
 
                         </div>
-                    </form>
                 </div>
                 <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 <button type="submit" class="btn btn-primary">submit</button>
                 </div>
+            </form>
             </div>
             </div>
         </div>

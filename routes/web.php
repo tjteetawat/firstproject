@@ -31,3 +31,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 // Subject controller
 Route::get('/create_subject','SubjectController@create')->name('create_subject')->middleware('auth');
 Route::post('/create_subject','SubjectController@store');
+
+
+Route::get('/password', 'HomeController@password')->name('password');
+Route::post('/password' , 'HomeController@changepassword');

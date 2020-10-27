@@ -136,8 +136,13 @@ class HomeworkController extends Controller
             "status"    =>  $new_status
         ]);
 
-        $homeworks = Homework::all();
-        return redirect('/homework');
+        if($new_status == "ส่งแล้ว"){
+            return redirect('/homework')->with('warning','คุณสามารถดูการบ้านที่ส่งแล้ว ที่ history');
+        }else{
+            return redirect('/homework');
+        }
+
+
 
 
 

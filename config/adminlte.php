@@ -247,7 +247,7 @@ return [
             'submenu' => [
                 [
                     'text' => 'change_password',
-                    'url'  => '#',
+                    'url'  => '/password',
                     'icon' => 'fas fa-fw fa-lock',
                 ],
 
