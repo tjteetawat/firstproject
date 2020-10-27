@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use GuzzleHttp\Client;
+use Carbon\Carbon;
 
 class HomeController extends Controller
 {
@@ -23,6 +25,22 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $url = "https://notify-api.line.me/api/notify";
+        $client = new Client();
+        $now = Carbon::now();
+        $message = "ทดสอบ Line Notification-".$now;
+        $res = $client->request('POST', $url, [
+            'headers'   =>[
+                'Accept'            => '/',
+                'content-type'      => 'application/x-www-form-urlencoded',
+                'Authorization'     => 'Bearer TfWkVSNG0ZIXp5yGxYHOSM1n9syB9T2FaRAsP9TrV6v'
+            ],
+            'form_params' => [
+                'message'   =>      $message
+            ],
+        ]);
+
+        echo $res->getStatusCode();
         return view('home');
     }
 }
