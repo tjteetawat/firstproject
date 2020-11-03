@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Homework;
 use App\Subject;
 use RealRashid\SweetAlert\Facades\Alert;
+use GuzzleHttp\Client;
+use Carbon\Carbon;
 
 class HomeworkController extends Controller
 {
@@ -38,6 +40,22 @@ class HomeworkController extends Controller
         //
     }
 
+    function send_sms($message){
+
+        $url = "https://notify-api.line.me/api/notify";
+        $client = new Client();
+        $res = $client->request('POST', $url, [
+            'headers'   =>[
+                'Accept'            => '/',
+                'content-type'      => 'application/x-www-form-urlencoded',
+                'Authorization'     => 'Bearer TfWkVSNG0ZIXp5yGxYHOSM1n9syB9T2FaRAsP9TrV6v'
+            ],
+            'form_params' => [
+                'message'   =>      $message
+            ],
+        ]);
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -47,6 +65,13 @@ class HomeworkController extends Controller
     public function store(Request $request)
     {
         $req = $request->all();
+
+        $order_date =Carbon::parse($req['order_date'])->format('d/m/y');
+        $submit_date =Carbon::parse($req['submit_date'])->format('d/m/y');
+
+        $diff = Carbon::parse($req['order_date'])->diffInDays($req['submit_date']);
+
+
         if($req['order_date']  > $req['submit_date']){
 
             return redirect('homework');
@@ -62,6 +87,10 @@ class HomeworkController extends Controller
         $homework->submit_date=$req['submit_date'];
         $homework->save();
 
+
+        $message = "การบ้าน ".$req['title']." วิชา ".$req['subject']." สั่งเมื่อ ".$order_date." ส่ง ".$submit_date." ระยะเวลาในการทำ ".$diff." วัน ";
+        // $message = "การบ้าน Writing วิชา PNoina สั่งเมื่อ 23124 5 ส่ง 12146 ระยะเวลาในการทำ 5111 วัน";
+        $this->send_sms($message);
         return redirect('homework');
 
     }
@@ -141,9 +170,6 @@ class HomeworkController extends Controller
         }else{
             return redirect('/homework');
         }
-
-
-
 
 
     }
