@@ -47,6 +47,7 @@ class sendLine extends Command
         foreach ($homeworks as $homework) {
             $message = "อย่าลืมทำการบ้าน!!! วิชา ".$homework->subject." อีก2วันส่ง!!!";
             $this->send_sms($message);
+            $this->info('notified sent');
         }
 
 
