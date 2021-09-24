@@ -61,7 +61,7 @@ class sendLine extends Command
             'headers'   =>[
                 'Accept'            => '/',
                 'content-type'      => 'application/x-www-form-urlencoded',
-                'Authorization'     => 'Bearer TfWkVSNG0ZIXp5yGxYHOSM1n9syB9T2FaRAsP9TrV6v'
+                'Authorization'     => 'Bearer '.config('line.token')
             ],
             'form_params' => [
                 'message'   =>      $message
